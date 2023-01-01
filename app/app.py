@@ -1,16 +1,7 @@
 import streamlit as st
 import numpy as np
 import pandas as pd
-import seaborn as sns
-import matplotlib.pyplot as plt
-from sklearn.linear_model import LinearRegression
-from sklearn.model_selection import train_test_split, cross_val_score
-from sklearn.preprocessing import OneHotEncoder, MinMaxScaler, StandardScaler, LabelEncoder, RobustScaler
-from sklearn.pipeline import Pipeline, make_pipeline
-from sklearn.impute import SimpleImputer
-from sklearn.compose import ColumnTransformer, make_column_selector
-from sklearn import set_config
-set_config(display="diagram")
+
 
 @st.cache
 def load_data():
