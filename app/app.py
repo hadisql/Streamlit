@@ -14,21 +14,24 @@ st.title('Spanish wine DataFrame')
 
 #df = load_data()
 # Create a text element and let the reader know the data is loading.
-data_load_state = st.text('Loading data...')
+#data_load_state = st.text('Loading data...')
 # Load 10,000 rows of data into the dataframe.
 df = load_data()
 # Notify the reader that the data was successfully loaded.
-data_load_state.text('Done!(using st.cache)')
+#data_load_state.text('Loading done!(using st.cache)')
 nrows_df = st.slider('Select a number of rows to show',0,10,3) #min,max,value
 st.dataframe(df.head(nrows_df))
 
-st.text(f'nombre de producteurs différents : {df.winery.nunique()}')
-st.text(f'nombre de vins différents : {df.wine.nunique()}')
-st.text(f'types de vins différents : {df.type.nunique()}')
-st.text(f'nombre de régions différentes : {df.region.nunique()}')
+st.text(f'number of distinct wineries : {df.winery.nunique()}')
+st.text(f'number of distinct wines : {df.wine.nunique()}')
+st.text(f'type of wines listed : {df.type.nunique()}')
+st.text(f'number of distinct regions : {df.region.nunique()}')
 
-#fig,ax = plt.subplots()
-#ax.bar(df.region.value_counts().index[:15],df.region.value_counts().tolist()[:15])
-#ax.xticks(rotation=45)
-#st.pyplot(fig)
-st.bar_chart(x=df.region.value_counts().index[:10].tolist(),y=df.region.value_counts().tolist()[:10])
+values=df.region.value_counts().tolist()[:10]
+keys=df.region.value_counts().index[:10].tolist()
+
+d = {k:v for (k,v) in zip(keys,values)}
+bar_data = pd.DataFrame(data=d,index=range(1))
+#st.dataframe(bar_data)
+st.title("Top 10 wine producing regions")
+st.bar_chart(bar_data)
