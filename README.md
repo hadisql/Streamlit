@@ -1,4 +1,4 @@
-# <img src="https://streamlit.io/images/brand/streamlit-mark-color.png" alt="drawing" width="200"/>
+## <img src="https://streamlit.io/images/brand/streamlit-mark-color.png" alt="drawing" width="100"/>
 &nbsp;
-# Prise en main de Streamlit avec une étude Data Science simple
-# url web : https://hadisql-streamlit-appapp-xyk0ho.streamlit.app/
+## Prise en main de Streamlit avec une étude Data Science simple
+## url web : https://hadisql-streamlit-appapp-xyk0ho.streamlit.app/
